@@ -11,10 +11,10 @@ const Home = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
       >
-        <h2 className="text-5xl font-bold mb-4">Hi, I'm PAVAN KUMAR.K</h2>
+        <h2 className="text-5xl font-bold mb-4"> Pavan kumar.K</h2>
         <p className="text-xl mb-6">
           <Typewriter
-            words={["Creative Front-End Developer", "React Enthusiast", "UI/UX Explorer"]}
+            words={["Front-End Developer", "React Enthusiast", "UI/UX Explorer"]}
             loop
             cursor
             cursorStyle="|"

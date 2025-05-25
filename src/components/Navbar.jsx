@@ -1,8 +1,14 @@
-import React from "react";
-import { FaMoon, FaSun } from "react-icons/fa";
+import React, { useState } from "react";
+import { FaMoon, FaSun, FaBars, FaTimes } from "react-icons/fa";
 import { motion } from "framer-motion";
 
 const Navbar = ({ darkMode, setDarkMode }) => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => setMenuOpen(!menuOpen);
+
+  const navLinks = ["Home", "Skills", "Projects", "Resume"];
+
   return (
     <motion.nav
       className="bg-white dark:bg-gray-800 shadow sticky top-0 z-50"
@@ -16,18 +22,21 @@ const Navbar = ({ darkMode, setDarkMode }) => {
           whileHover={{ scale: 1.05 }}
           transition={{ type: "spring", stiffness: 300 }}
         >
-          My Portfolio
+          Developed By
         </motion.h1>
 
-        <ul className="flex space-x-6 items-center">
-          {["Home", "Skills", "Projects", "Resume"].map((name) => (
+        {/* Desktop Nav */}
+        <ul className="hidden md:flex space-x-6 items-center">
+          {navLinks.map((name) => (
             <motion.li key={name} whileHover={{ scale: 1.1 }} transition={{ type: "spring", stiffness: 300 }}>
-              <a href={`#${name.toLowerCase()}`} className="hover:text-blue-600 dark:hover:text-yellow-300 transition-colors duration-300">
+              <a
+                href={`#${name.toLowerCase()}`}
+                className="hover:text-blue-600 dark:hover:text-yellow-300 transition-colors duration-300"
+              >
                 {name}
               </a>
             </motion.li>
           ))}
-
           <li>
             <motion.button
               onClick={() => setDarkMode(!darkMode)}
@@ -40,7 +49,45 @@ const Navbar = ({ darkMode, setDarkMode }) => {
             </motion.button>
           </li>
         </ul>
+
+        {/* Mobile Menu Button */}
+        <div className="md:hidden flex items-center space-x-3">
+          <button onClick={toggleMenu} className="text-xl">
+            {menuOpen ? <FaTimes /> : <FaBars />}
+          </button>
+          <motion.button
+            onClick={() => setDarkMode(!darkMode)}
+            className="p-2 rounded-full bg-gray-200 dark:bg-gray-700"
+            aria-label="Toggle Dark Mode"
+            whileTap={{ rotate: 180, scale: 0.9 }}
+            transition={{ type: "spring", stiffness: 200 }}
+          >
+            {darkMode ? <FaSun className="text-yellow-400" /> : <FaMoon className="text-gray-800" />}
+          </motion.button>
+        </div>
       </div>
+
+      {/* Mobile Menu Dropdown */}
+      {menuOpen && (
+        <motion.ul
+          className="md:hidden flex flex-col space-y-4 px-4 pb-4"
+          initial={{ opacity: 0, height: 0 }}
+          animate={{ opacity: 1, height: "auto" }}
+          transition={{ duration: 0.3 }}
+        >
+          {navLinks.map((name) => (
+            <li key={name}>
+              <a
+                href={`#${name.toLowerCase()}`}
+                onClick={() => setMenuOpen(false)}
+                className="block text-lg hover:text-blue-600 dark:hover:text-yellow-300 transition-colors"
+              >
+                {name}
+              </a>
+            </li>
+          ))}
+        </motion.ul>
+      )}
     </motion.nav>
   );
 };

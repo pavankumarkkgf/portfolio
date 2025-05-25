@@ -7,7 +7,8 @@ const About = () => {
         <h2 className="text-3xl font-bold text-center mb-8">About Me</h2>
         <div className="max-w-3xl mx-auto text-lg text-center">
           <p>
-            I'm a passionate Front-End Developer skilled in building dynamic, responsive, and beautiful websites using React, TailwindCSS, and modern JavaScript. I love transforming ideas into interactive user experiences.
+            I am a frontend developer with expertise in React, TailwindCSS, and modern JavaScript frameworks.
+            I’ve built dynamic web interfaces, including an AI-powered mock interview platform with real-time video and learning modules.
           </p>
         </div>
       </div>
