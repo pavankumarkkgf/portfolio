@@ -6,7 +6,7 @@ const projects = [
   {
     title: "Healthone",
     description: "A health tracking platform providing personalized wellness insights and appointment scheduling.",
-    link: "https://github.com/yourusername/healthone",
+    link: "https://github.com/pavankumarkkgf/HelathOne",
   },
   {
     title: "SpeaQAI",

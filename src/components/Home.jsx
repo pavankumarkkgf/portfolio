@@ -45,7 +45,7 @@ const Home = () => {
         transition={{ duration: 1 }}
       >
         <img
-          src="/pavank.jpg"
+          src="/my.jpg"
           alt="Pavan Kumar"
           className="w-full h-full object-cover"
         />

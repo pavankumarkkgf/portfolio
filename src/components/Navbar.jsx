@@ -13,8 +13,8 @@ const Navbar = ({ darkMode, setDarkMode }) => {
 
         {/* Navigation Links */}
         <ul className="flex items-center space-x-6 text-gray-800 dark:text-white">
-          {/* Resume Download Link */}
-          <li className="hidden md:block">
+          {/* Resume Download Link - now visible on all screens */}
+          <li>
             <a
               href="/Pavan resume.pdf"
               download
