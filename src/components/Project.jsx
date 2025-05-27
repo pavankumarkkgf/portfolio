@@ -11,7 +11,7 @@ const projects = [
   {
     title: "SpeaQAI",
     description: "An AI-powered tool that enhances real-time communication by providing live transcription and smart conversation summaries.",
-    link: "https://github.com/yourusername/speaqai",
+    link: "https://github.com/pavankumarkkgf/SpeaQAI",
   }
 ];
 

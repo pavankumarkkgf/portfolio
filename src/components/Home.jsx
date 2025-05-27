@@ -15,8 +15,10 @@ const Home = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
       >
-        <h2 className="text-5xl font-bold mb-4 dark:text-white">Pavan Kumar.K</h2>
-        <p className="text-xl mb-6 dark:text-white">
+        <h2 className="text-5xl font-bold mb-4 text-gray-900">
+          Pavan Kumar.K
+        </h2>
+        <p className="text-xl mb-6 text-gray-900">
           <Typewriter
             words={["Front-End Developer", "React Enthusiast", "UI/UX Explorer"]}
             loop
@@ -35,7 +37,7 @@ const Home = () => {
         </a>
       </motion.div>
 
-      {/* Image */}
+      {/* Profile Image */}
       <motion.div
         className="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-white shadow-lg"
         initial={{ opacity: 0, scale: 0.8 }}
@@ -43,7 +45,7 @@ const Home = () => {
         transition={{ duration: 1 }}
       >
         <img
-          src="/pavan.jpg" // ✅ Correct path from public
+          src="/pavank.jpg"
           alt="Pavan Kumar"
           className="w-full h-full object-cover"
         />
