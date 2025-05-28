@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Typewriter } from "react-simple-typewriter";
+import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 
 const Home = () => {
   return (
@@ -37,18 +38,46 @@ const Home = () => {
         </a>
       </motion.div>
 
-      {/* Profile Image */}
+      {/* Profile Image + Icons */}
       <motion.div
-        className="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-white shadow-lg"
+        className="flex flex-col items-center"
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1 }}
       >
-        <img
-          src="/my.jpg"
-          alt="Pavan Kumar"
-          className="w-full h-full object-cover"
-        />
+        <div className="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden border-4 border-white shadow-lg mb-4">
+          <img
+            src="/my.jpg"
+            alt="Pavan Kumar"
+            className="w-full h-full object-cover"
+          />
+        </div>
+
+        {/* Social Icons */}
+       <div className="flex space-x-6 mt-4 text-2xl text-gray-800 dark:text-black">
+  <a
+    href="https://github.com/pavankumarkkgf"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="hover:text-black transition-transform hover:scale-110"
+  >
+    <FaGithub />
+  </a>
+  <a
+    href="https://www.linkedin.com/in/pavan-kumar-k-42922b35a/"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="hover:text-black transition-transform hover:scale-110"
+  >
+    <FaLinkedin />
+  </a>
+  <a
+    href="mailto:pavankumarkkgf@gmail.com"
+    className="hover:text-black transition-transform hover:scale-110"
+  >
+    <FaEnvelope />
+  </a>
+</div>
       </motion.div>
     </section>
   );
